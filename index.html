@@ -5,58 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masoud Hakimi Heris</title>
   <style>
+    /* Full-page background */
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      background-image: url('qpic.jpg');
+      background-size: cover;       /* Cover the whole page */
+      background-position: center;
+      background-attachment: fixed; /* Stays in place when scrolling */
+      color: #fff;                  /* Text color for contrast */
     }
-    header img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
+
+    /* Overlay to make text readable */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+      min-height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
     }
+
     .profile {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
     }
+
     .profile img {
       width: 200px;
       margin-right: 20px;
       border-radius: 10px;
+      border: 2px solid #fff;
     }
-    .profile-info {
-      flex: 1;
+
+    .profile-info h1, .profile-info h3 {
+      margin: 0 0 10px 0;
     }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
     p {
       margin-bottom: 15px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <!-- Header image -->
-  <header>
-    <img src="qpic.jpg" alt="Header Image">
-  </header>
-
-  <!-- Profile section -->
-  <div class="profile">
-    <img src="mash.jpg" alt="Masoud Hakimi Heris">
-    <div class="profile-info">
-      <h1>Masoud Hakimi Heris (Mas)</h1>
-      <h3>Ph.D. Student, Electrical and Computer Engineering, NC State</h3>
-      <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
-      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  <div class="overlay">
+    <div class="profile">
+      <img src="mash.jpg" alt="Masoud Hakimi Heris">
+      <div class="profile-info">
+        <h1>Masoud Hakimi Heris (Mas)</h1>
+        <h3>Ph.D. Student, Electrical and Computer Engineering, NC State</h3>
+        <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
+        <p>Email (personal): <a href="mailto:mhakimih1988@gmail.com">mhakimih1988@gmail.com</a></p>
+        <p>Email (school): <a href="mailto:mhakimi@ncsu.edu">mhakimi@ncsu.edu</a></p>
+      </div>
     </div>
   </div>
-
 </body>
 </html>
