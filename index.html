@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masoud Hakimi Heris</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .profile {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .profile img {
+      width: 200px;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, this is my website!</h1>
+
+  <!-- Header image -->
+  <header>
+    <img src="qpic.jpg" alt="Header Image">
+  </header>
+
+  <!-- Profile section -->
+  <div class="profile">
+    <img src="mash.jpg" alt="Masoud Hakimi Heris">
+    <div class="profile-info">
+      <h1>Masoud Hakimi Heris (Mas)</h1>
+      <h3>Ph.D. Student, Electrical and Computer Engineering, NC State</h3>
+      <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </div>
+  </div>
+
 </body>
 </html>
