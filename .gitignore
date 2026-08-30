@@ -17,3 +17,9 @@ yarn-error.log*
 *.swo
 *.idea/
 .vscode/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
