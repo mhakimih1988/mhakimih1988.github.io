@@ -5,169 +5,239 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masoud Hakimi Heris</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-image: url('qpic.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fff;
+    :root {
+      --accent: #cc0000;
+      --accent-dark: #990000;
+      --text: #222222;
+      --muted: #5a5a5a;
+      --rule: #e2e2e2;
+      --bg: #ffffff;
+      --bg-soft: #f7f7f5;
+      --measure: 800px;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 0 0 40px;
-      box-sizing: border-box;
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
     }
+
+    .wrap {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Navigation ---------- */
 
     .site-nav {
       position: sticky;
       top: 0;
       z-index: 10;
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--rule);
     }
 
     .site-nav ul {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 24px;
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0;
+      gap: 4px 20px;
     }
 
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .site-nav a {
+      display: block;
+      padding: 12px 0;
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
     }
+
+    .site-nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header { padding: 48px 0 8px; }
 
     .profile {
       display: flex;
       align-items: flex-start;
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 40px;
+      gap: 28px;
     }
 
     .profile img {
-      width: 200px;
-      margin-right: 20px;
-      border-radius: 10px;
-      border: 2px solid #fff;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
     }
 
-    .profile-info h1, .profile-info p.role {
-      margin: 0 0 10px 0;
+    .profile h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .profile .role {
+      margin: 6px 0 2px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .profile .affil {
+      margin: 0;
+      color: var(--muted);
     }
 
     .profile-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 8px 18px;
       padding: 0;
-      margin: 10px 0 0;
+      margin: 14px 0 0;
+      font-size: 15px;
     }
 
-    section {
-      margin-top: 40px;
+    /* ---------- Sections ---------- */
+
+    main section {
+      padding: 34px 0 6px;
+      border-top: 1px solid var(--rule);
+      margin-top: 30px;
     }
 
-    a {
-      color: #00ffff;
-      text-decoration: none;
+    main section:first-of-type { border-top: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 15px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
-    p {
-      margin-bottom: 15px;
+    h3 {
+      margin: 28px 0 6px;
+      font-size: 19px;
+      line-height: 1.35;
     }
+
+    p { margin: 0 0 16px; }
+
+    a { color: var(--accent); }
+
+    a:hover { color: var(--accent-dark); }
 
     figure.fig-slot {
-      margin: 0 0 20px;
-      padding: 30px 20px;
-      border: 1px dashed rgba(255,255,255,0.5);
-      border-radius: 8px;
+      margin: 16px 0 24px;
+      padding: 34px 20px;
+      background: var(--bg-soft);
+      border: 1px dashed #c9c9c9;
+      border-radius: 6px;
       text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    figure.fig-slot figcaption { margin: 0; }
+
+    /* ---------- Footer ---------- */
+
+    .site-footer {
+      margin-top: 46px;
+      padding: 22px 0 46px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
 
-    <nav class="site-nav" aria-label="Section navigation">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#teaching">Teaching &amp; Mentoring</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <nav class="site-nav" aria-label="Section navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <header class="wrap">
-      <div class="profile">
-        <img src="mash.jpg" alt="Masoud Hakimi Heris">
-        <div class="profile-info">
-          <h1>Masoud Hakimi Heris (Mas)</h1>
-          <p class="role">Ph.D. Student, Electrical and Computer Engineering, NC State</p>
-          <ul class="profile-links">
-            <li><a href="mailto:mhakimi@ncsu.edu">Email</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#cv">CV</a></li>
-          </ul>
-        </div>
+  <header class="site-header wrap">
+    <div class="profile">
+      <img src="mash.jpg" alt="Masoud Hakimi Heris">
+      <div class="profile-info">
+        <h1>Masoud Hakimi Heris</h1>
+        <p class="role">Ph.D. Student, Electrical and Computer Engineering</p>
+        <p class="affil">North Carolina State University</p>
+        <ul class="profile-links">
+          <li><a href="mailto:mhakimi@ncsu.edu">Email</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="wrap">
+  <main class="wrap">
 
-      <section id="about">
-        <h2>About</h2>
-        <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
-      </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
+    </section>
 
-      <section id="news">
-        <h2>News</h2>
-      </section>
+    <section id="news">
+      <h2>News</h2>
+    </section>
 
-      <section id="research">
-        <h2>Research</h2>
-      </section>
+    <section id="research">
+      <h2>Research</h2>
+    </section>
 
-      <section id="publications">
-        <h2>Publications</h2>
-      </section>
+    <section id="publications">
+      <h2>Publications</h2>
+    </section>
 
-      <section id="teaching">
-        <h2>Teaching &amp; Mentoring</h2>
-      </section>
+    <section id="teaching">
+      <h2>Teaching &amp; Mentoring</h2>
+    </section>
 
-      <section id="cv">
-        <h2>CV</h2>
-      </section>
+    <section id="cv">
+      <h2>CV</h2>
+    </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email (personal): <a href="mailto:mhakimih1988@gmail.com">mhakimih1988@gmail.com</a></p>
-        <p>Email (school): <a href="mailto:mhakimi@ncsu.edu">mhakimi@ncsu.edu</a></p>
-      </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email (personal): <a href="mailto:mhakimih1988@gmail.com">mhakimih1988@gmail.com</a></p>
+      <p>Email (school): <a href="mailto:mhakimi@ncsu.edu">mhakimi@ncsu.edu</a></p>
+    </section>
 
-    </main>
+  </main>
 
-    <footer class="wrap">
-      <p>&copy; 2026 Masoud Hakimi Heris</p>
-    </footer>
+  <footer class="site-footer wrap">
+    <p>&copy; 2026 Masoud Hakimi Heris</p>
+  </footer>
 
-  </div>
 </body>
 </html>
