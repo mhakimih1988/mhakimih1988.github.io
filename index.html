@@ -5,35 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masoud Hakimi Heris</title>
   <style>
-    /* Full-page background */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
       background-image: url('qpic.jpg');
-      background-size: cover;       /* Cover the whole page */
+      background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Stays in place when scrolling */
-      color: #fff;                  /* Text color for contrast */
+      background-attachment: fixed;
+      color: #fff;
     }
 
-    /* Overlay to make text readable */
     .overlay {
-      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+      background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 0 0 40px;
       box-sizing: border-box;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 10px 20px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .profile {
       display: flex;
       align-items: flex-start;
-      max-width: 900px;
-      margin: auto;
       background-color: rgba(0,0,0,0.5);
       padding: 20px;
       border-radius: 10px;
+      margin-top: 40px;
     }
 
     .profile img {
@@ -43,8 +64,21 @@
       border: 2px solid #fff;
     }
 
-    .profile-info h1, .profile-info h3 {
+    .profile-info h1, .profile-info p.role {
       margin: 0 0 10px 0;
+    }
+
+    .profile-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    section {
+      margin-top: 40px;
     }
 
     a {
@@ -55,20 +89,85 @@
     p {
       margin-bottom: 15px;
     }
+
+    figure.fig-slot {
+      margin: 0 0 20px;
+      padding: 30px 20px;
+      border: 1px dashed rgba(255,255,255,0.5);
+      border-radius: 8px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="overlay">
-    <div class="profile">
-      <img src="mash.jpg" alt="Masoud Hakimi Heris">
-      <div class="profile-info">
-        <h1>Masoud Hakimi Heris (Mas)</h1>
-        <h3>Ph.D. Student, Electrical and Computer Engineering, NC State</h3>
+
+    <nav class="site-nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching &amp; Mentoring</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="wrap">
+      <div class="profile">
+        <img src="mash.jpg" alt="Masoud Hakimi Heris">
+        <div class="profile-info">
+          <h1>Masoud Hakimi Heris (Mas)</h1>
+          <p class="role">Ph.D. Student, Electrical and Computer Engineering, NC State</p>
+          <ul class="profile-links">
+            <li><a href="mailto:mhakimi@ncsu.edu">Email</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#cv">CV</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <section id="about">
+        <h2>About</h2>
         <p>Mas’s passion lies in theoretical quantum optics and photonics. He is currently engaged in the development of hybrid CV-DV algorithms and quantum control with a focus on trapped-ion platforms. His prior experience encompasses cavity QED and quantum dots for quantum photonic applications, MEMS/NEMS for strain characterization in 2D TMDC materials, and investigation of Single-Electron transistors, gained during his two master’s degrees in Electrical Engineering.</p>
+      </section>
+
+      <section id="news">
+        <h2>News</h2>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching &amp; Mentoring</h2>
+      </section>
+
+      <section id="cv">
+        <h2>CV</h2>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
         <p>Email (personal): <a href="mailto:mhakimih1988@gmail.com">mhakimih1988@gmail.com</a></p>
         <p>Email (school): <a href="mailto:mhakimi@ncsu.edu">mhakimi@ncsu.edu</a></p>
-      </div>
-    </div>
+      </section>
+
+    </main>
+
+    <footer class="wrap">
+      <p>&copy; 2026 Masoud Hakimi Heris</p>
+    </footer>
+
   </div>
 </body>
 </html>
