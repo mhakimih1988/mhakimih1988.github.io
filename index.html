@@ -213,6 +213,30 @@
 
     <section id="research">
       <h2>Research</h2>
+
+      <h3>Instruction set architectures for hybrid quantum computation</h3>
+      <p>A classical processor exposes a small set of instructions its hardware executes efficiently, and compilers build everything else out of them. Quantum computing has largely skipped that step: algorithms are written for idealized two-level qubits, while a real trapped-ion processor offers multi-level (qudit) electronic states coupled to continuous-variable oscillator modes. I design instruction sets native to that hybrid hardware, so algorithms compile onto what the device actually does instead of onto an abstraction layered over it.</p>
+      <figure class="fig-slot">
+        <figcaption>Figure placeholder — hybrid qudit–oscillator instruction set diagram.</figcaption>
+      </figure>
+
+      <h3>Pulse-level control and compilation for trapped ions</h3>
+      <p>Every logical gate in an ion trap is ultimately a shaped laser or radio-frequency pulse, and the gap between the two is where most of the error budget lives. I develop compilation methods that carry a high-level operation down to the pulse sequence implementing it, accounting for the coupling between the ions’ internal states and the motion they share. The goal is control that stays accurate as systems grow, without hand-tuning every gate.</p>
+      <figure class="fig-slot">
+        <figcaption>Figure placeholder — gate-to-pulse compilation pipeline.</figcaption>
+      </figure>
+
+      <h3>Quantum signal processing: robustness and photonic realization</h3>
+      <p>Quantum signal processing is a unifying framework that expresses a wide range of quantum algorithms as a single polynomial transformation, built by interleaving one fixed operation with tunable rotations. I study how these protocols behave when the hardware is imperfect — miscalibrated rotations, drift, loss — and which constructions degrade gracefully rather than catastrophically. I also work on realizing them photonically, where the natural degrees of freedom are modes of light rather than atomic states.</p>
+      <figure class="fig-slot">
+        <figcaption>Figure placeholder — QSP response under control error.</figcaption>
+      </figure>
+
+      <h3>Nanophotonics and quantum materials</h3>
+      <p>Alongside the architecture work, I study the devices that host quantum information: cavity QED and quantum-dot emitters for photonic applications, and two-dimensional transition-metal dichalcogenides whose optical and electronic response can be tuned by mechanical strain. Earlier projects used MEMS/NEMS platforms to apply and measure that strain, and examined charge transport in single-electron transistors. This device-level background shapes what I am willing to let a quantum instruction set assume about its hardware.</p>
+      <figure class="fig-slot">
+        <figcaption>Figure placeholder — strained 2D material device and optical response.</figcaption>
+      </figure>
     </section>
 
     <section id="publications">
