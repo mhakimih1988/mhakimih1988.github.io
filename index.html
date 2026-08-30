@@ -323,9 +323,83 @@
       color: var(--muted);
       font-size: 14px;
     }
+    /* ---------- Accessibility ---------- */
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 20;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      left: 0;
+      color: #ffffff;
+    }
+
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid #0b57d0;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Anchor targets clear the sticky nav. */
+    main section, .site-header { scroll-margin-top: 68px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    /* ---------- Small screens ---------- */
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+
+      .wrap, .site-nav ul { padding: 0 18px; }
+
+      .site-nav ul { gap: 0 16px; }
+
+      .site-nav a { padding: 9px 0; font-size: 14px; }
+
+      .site-header { padding: 28px 0 4px; }
+
+      .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .profile img { width: 120px; height: 120px; }
+
+      .profile h1 { font-size: 26px; }
+
+      .profile .role { font-size: 17px; }
+
+      .profile-links { gap: 10px 16px; }
+
+      main section { padding-top: 28px; margin-top: 24px; }
+
+      h3 { font-size: 18px; }
+
+      .news-list li {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .news-list time { flex: none; }
+
+      main section, .site-header { scroll-margin-top: 56px; }
+    }
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Section navigation">
     <ul>
@@ -339,9 +413,9 @@
     </ul>
   </nav>
 
-  <header class="site-header wrap">
+  <header id="top" class="site-header wrap">
     <div class="profile">
-      <img src="mash.jpg" alt="Masoud Hakimi Heris">
+      <img src="mash.jpg" width="150" height="150" alt="Portrait of Masoud Hakimi Heris">
       <div class="profile-info">
         <h1>Masoud Hakimi Heris</h1>
         <p class="role">Ph.D. Candidate, Electrical and Computer Engineering — expected May 2027</p>
@@ -359,15 +433,15 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main" class="wrap">
 
-    <section id="about">
-      <h2>About</h2>
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
       <p>I am a Ph.D. candidate in Electrical and Computer Engineering at NC State, where I design hardware-native instruction sets for hybrid qudit–oscillator quantum computation on trapped-ion hardware. Most compilers assume a register of qubits, while a trapped-ion processor natively offers multi-level electronic states and the motional modes of the ion crystal; I build instruction sets that expose that richer hardware to algorithms instead of hiding it behind a qubit abstraction. I also work on quantum signal processing — its robustness to control error and its photonic realization — and on pulse-level control and compilation, mapping logical operations onto the laser and RF drives an ion trap actually executes. Earlier, across two master’s degrees, I studied MEMS/NEMS strain characterization of 2D TMDC materials and single-electron transistors.</p>
     </section>
 
-    <section id="news">
-      <h2>News</h2>
+    <section id="news" aria-labelledby="news-heading">
+      <h2 id="news-heading">News</h2>
 
       <ul class="news-list">
         <li><time datetime="2026-08">Aug 2026</time><span>Placeholder — recent talk, award, or paper acceptance.</span></li>
@@ -378,8 +452,8 @@
       </ul>
     </section>
 
-    <section id="research">
-      <h2>Research</h2>
+    <section id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research</h2>
 
       <h3>Instruction set architectures for hybrid quantum computation</h3>
       <p>A classical processor exposes a small set of instructions its hardware executes efficiently, and compilers build everything else out of them. Quantum computing has largely skipped that step: algorithms are written for idealized two-level qubits, while a real trapped-ion processor offers multi-level (qudit) electronic states coupled to continuous-variable oscillator modes. I design instruction sets native to that hybrid hardware, so algorithms compile onto what the device actually does instead of onto an abstraction layered over it.</p>
@@ -406,8 +480,8 @@
       </figure>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
+    <section id="publications" aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
 
       <h3>Peer-Reviewed</h3>
       <ul class="pub-list">
@@ -426,7 +500,7 @@
       <h3>Under Review and Preprints</h3>
       <ul class="pub-list">
         <li>
-          <span class="pub-authors"><strong>M. Hakimi Heris</strong><sup>*</sup>, C. Coauthor<sup>*</sup>, and D. Coauthor.</span>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong><sup><a href="#equal-contrib">*</a></sup>, C. Coauthor<sup><a href="#equal-contrib">*</a></sup>, and D. Coauthor.</span>
           <span class="pub-title">Title of the preprint goes here.</span>
           <span class="pub-venue">Under review, 2026. arXiv:0000.00000.</span>
           <span class="pub-links">
@@ -445,24 +519,24 @@
         </li>
       </ul>
 
-      <p class="pub-note"><sup>*</sup> These authors contributed equally.</p>
+      <p class="pub-note" id="equal-contrib"><sup>*</sup> These authors contributed equally.</p>
     </section>
 
-    <section id="teaching">
-      <h2>Teaching &amp; Mentoring</h2>
+    <section id="teaching" aria-labelledby="teaching-heading">
+      <h2 id="teaching-heading">Teaching &amp; Mentoring</h2>
 
       <p>Placeholder — teaching assistantships, guest lectures, mentored students, and outreach go here.</p>
     </section>
 
-    <section id="cv">
-      <h2>CV</h2>
+    <section id="cv" aria-labelledby="cv-heading">
+      <h2 id="cv-heading">CV</h2>
 
       <p><a class="btn" href="cv.pdf">Download CV (PDF)</a></p>
       <p class="cv-meta">Last updated August 2026.</p>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
       <p>Email (personal): <a href="mailto:mhakimih1988@gmail.com">mhakimih1988@gmail.com</a></p>
       <p>Email (school): <a href="mailto:mhakimi@ncsu.edu">mhakimi@ncsu.edu</a></p>
     </section>
