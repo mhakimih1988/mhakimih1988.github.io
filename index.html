@@ -55,9 +55,9 @@
     ],
     "sameAs": [
       "https://orcid.org/0000-0001-7388-5856",
-      "https://scholar.google.com/citations?user=SCHOLAR_ID",
+      "https://scholar.google.com/citations?user=VVedtiAAAAAJ",
       "https://github.com/mhakimih1988",
-      "https://www.linkedin.com/in/LINKEDIN_HANDLE"
+      "https://www.linkedin.com/in/mhakimih/"
     ]
   }
   </script>
@@ -424,10 +424,10 @@
           <li><a class="btn btn-sm" href="cv.pdf">CV (PDF)</a></li>
           <li><a href="mailto:mhakimi@ncsu.edu">Email</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="https://scholar.google.com/citations?user=SCHOLAR_ID">Google Scholar</a></li>
+          <li><a href="https://scholar.google.com/citations?user=VVedtiAAAAAJ">Google Scholar</a></li>
           <li><a href="https://orcid.org/0000-0001-7388-5856">ORCID</a></li>
           <li><a href="https://github.com/mhakimih1988">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/LINKEDIN_HANDLE">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/mhakimih/">LinkedIn</a></li>
         </ul>
       </div>
     </div>
@@ -437,18 +437,19 @@
 
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
-      <p>I am a Ph.D. candidate in Electrical and Computer Engineering at NC State, where I design hardware-native instruction sets for hybrid qudit–oscillator quantum computation on trapped-ion hardware. Most compilers assume a register of qubits, while a trapped-ion processor natively offers multi-level electronic states and the motional modes of the ion crystal; I build instruction sets that expose that richer hardware to algorithms instead of hiding it behind a qubit abstraction. I also work on quantum signal processing — its robustness to control error and its photonic realization — and on pulse-level control and compilation, mapping logical operations onto the laser and RF drives an ion trap actually executes. Earlier, across two master’s degrees, I studied MEMS/NEMS strain characterization of 2D TMDC materials and single-electron transistors.</p>
+      <p>I am a Ph.D. candidate in Electrical and Computer Engineering at NC State, where I work with Prof. Yuan Liu on hardware-native instruction sets for hybrid qudit–oscillator quantum computation on trapped-ion hardware. Most compilers assume a register of qubits, while a trapped-ion processor natively offers multi-level electronic states and the motional modes of the ion crystal; I build instruction sets that expose that richer hardware to algorithms instead of hiding it behind a qubit abstraction. I also work on quantum signal processing — its robustness to control error and its photonic realization — and on pulse-level control and compilation, mapping logical operations onto the laser and RF drives an ion trap actually executes. Earlier, across two master’s degrees, I studied MEMS/NEMS strain characterization of 2D TMDC materials and single-electron transistors.</p>
+      <p>My dissertation is on the co-design of quantum algorithms, architectures, and control for early fault-tolerant hardware. I expect to defend in May 2027 and am on the academic job market for positions starting Fall 2027.</p>
     </section>
 
     <section id="news" aria-labelledby="news-heading">
       <h2 id="news-heading">News</h2>
 
       <ul class="news-list">
-        <li><time datetime="2026-08">Aug 2026</time><span>Placeholder — recent talk, award, or paper acceptance.</span></li>
-        <li><time datetime="2026-05">May 2026</time><span>Placeholder — preprint posted to arXiv.</span></li>
-        <li><time datetime="2026-03">Mar 2026</time><span>Placeholder — conference presentation (APS March Meeting, IEEE QCE, …).</span></li>
-        <li><time datetime="2025-11">Nov 2025</time><span>Placeholder — collaboration, internship, or visit.</span></li>
-        <li><time datetime="2025-08">Aug 2025</time><span>Placeholder — journal publication or milestone.</span></li>
+        <li><time datetime="2026-07">Jul 2026</time><span>Attended <strong>Prospects in Theoretical Physics</strong> at the Institute for Advanced Study, Princeton.</span></li>
+        <li><time datetime="2026-06">Jun 2026</time><span>Talk at the <strong>QCCC-26 workshop at ISCA</strong> on hardware-aware pulse synthesis for compact multiqubit gates on trapped ions.</span></li>
+        <li><time datetime="2026-05">May 2026</time><span><em>HyPulse</em>, our pulse synthesis framework for hybrid qubit–oscillator gates, was accepted to <strong>IEEE QCE 2026</strong>.</span></li>
+        <li><time datetime="2026-02">Feb 2026</time><span>Our perspective on block-encodings and polynomial transformations appeared in <strong>APL Computational Physics</strong>.</span></li>
+        <li><time datetime="2026-01">Jan 2026</time><span>Joined the <strong>NSF I-Corps</strong> Quantum+X team as co-entrepreneurial lead, on quantum algorithms for photonic integrated circuits.</span></li>
       </ul>
     </section>
 
@@ -456,25 +457,25 @@
       <h2 id="research-heading">Research</h2>
 
       <h3>Instruction set architectures for hybrid quantum computation</h3>
-      <p>A classical processor exposes a small set of instructions its hardware executes efficiently, and compilers build everything else out of them. Quantum computing has largely skipped that step: algorithms are written for idealized two-level qubits, while a real trapped-ion processor offers multi-level (qudit) electronic states coupled to continuous-variable oscillator modes. I design instruction sets native to that hybrid hardware, so algorithms compile onto what the device actually does instead of onto an abstraction layered over it.</p>
+      <p>A classical processor exposes a small set of instructions its hardware executes efficiently, and compilers build everything else out of them. Quantum computing has largely skipped that step: algorithms are written for idealized two-level qubits, while a real trapped-ion processor offers multi-level (qudit) electronic states coupled to continuous-variable oscillator modes. I design instruction sets native to that hybrid hardware, so algorithms compile onto what the device actually does instead of onto an abstraction layered over it. In our native trapped-ion instruction set, three primitives are enough to generate universal Hamiltonians with no synthesized mode-coupling operation; compiling the dissipative vibronic dynamics of a three-chromophore complex onto a single <sup>171</sup>Yb<sup>+</sup> ququart cut the gate count from 96 to 28 per Trotter step against the superconducting realization, reproducing published trajectories to about 1.1% RMSE.</p>
       <figure class="fig-slot">
         <figcaption>Figure placeholder — hybrid qudit–oscillator instruction set diagram.</figcaption>
       </figure>
 
       <h3>Pulse-level control and compilation for trapped ions</h3>
-      <p>Every logical gate in an ion trap is ultimately a shaped laser or radio-frequency pulse, and the gap between the two is where most of the error budget lives. I develop compilation methods that carry a high-level operation down to the pulse sequence implementing it, accounting for the coupling between the ions’ internal states and the motion they share. The goal is control that stays accurate as systems grow, without hand-tuning every gate.</p>
+      <p>Every logical gate in an ion trap is ultimately a shaped laser or radio-frequency pulse, and the gap between the two is where most of the error budget lives. I develop compilation methods that carry a high-level operation down to the pulse sequence implementing it, accounting for the coupling between the ions’ internal states and the motion they share. The goal is control that stays accurate as systems grow, without hand-tuning every gate. This work produced HyPulse, a GRAPE-based synthesis framework for hybrid CV–DV qubit–oscillator gates, together with a reusable library of compound pulse gadgets for Hamiltonian simulation.</p>
       <figure class="fig-slot">
         <figcaption>Figure placeholder — gate-to-pulse compilation pipeline.</figcaption>
       </figure>
 
       <h3>Quantum signal processing: robustness and photonic realization</h3>
-      <p>Quantum signal processing is a unifying framework that expresses a wide range of quantum algorithms as a single polynomial transformation, built by interleaving one fixed operation with tunable rotations. I study how these protocols behave when the hardware is imperfect — miscalibrated rotations, drift, loss — and which constructions degrade gracefully rather than catastrophically. I also work on realizing them photonically, where the natural degrees of freedom are modes of light rather than atomic states.</p>
+      <p>Quantum signal processing is a unifying framework that expresses a wide range of quantum algorithms as a single polynomial transformation, built by interleaving one fixed operation with tunable rotations. I study how these protocols behave when the hardware is imperfect — miscalibrated rotations, drift, loss — and which constructions degrade gracefully rather than catastrophically. I also work on realizing them photonically, where the natural degrees of freedom are modes of light rather than atomic states. We showed that block-encoding and phase-angle errors cross-compensate to first order, and built a constrained optimizer that suppresses correlated control error by 4–19×; I also co-led the first experimental realization of QSP on a programmable photonic integrated circuit.</p>
       <figure class="fig-slot">
         <figcaption>Figure placeholder — QSP response under control error.</figcaption>
       </figure>
 
       <h3>Nanophotonics and quantum materials</h3>
-      <p>Alongside the architecture work, I study the devices that host quantum information: cavity QED and quantum-dot emitters for photonic applications, and two-dimensional transition-metal dichalcogenides whose optical and electronic response can be tuned by mechanical strain. Earlier projects used MEMS/NEMS platforms to apply and measure that strain, and examined charge transport in single-electron transistors. This device-level background shapes what I am willing to let a quantum instruction set assume about its hardware.</p>
+      <p>Alongside the architecture work, I study the devices that host quantum information: cavity QED and quantum-dot emitters for photonic applications, and two-dimensional transition-metal dichalcogenides whose optical and electronic response can be tuned by mechanical strain. Earlier projects used MEMS/NEMS platforms to apply and measure that strain, and examined charge transport in single-electron transistors. This device-level background shapes what I am willing to let a quantum instruction set assume about its hardware. Recent work here inverse-designs nanophotonic cavities for spin–photon interfacing.</p>
       <figure class="fig-slot">
         <figcaption>Figure placeholder — strained 2D material device and optical response.</figcaption>
       </figure>
@@ -486,26 +487,66 @@
       <h3>Peer-Reviewed</h3>
       <ul class="pub-list">
         <li>
-          <span class="pub-authors"><strong>M. Hakimi Heris</strong>, A. Coauthor, and B. Coauthor.</span>
-          <span class="pub-title">Title of the published paper goes here.</span>
-          <span class="pub-venue">Journal Name <b>00</b>, 000000 (2026).</span>
+          <span class="pub-authors">K. J. Joven, E. R. Das, J. Bierman, A. Majumdar, <strong>M. Hakimi Heris</strong>, and Y. Liu.</span>
+          <span class="pub-title">Scalable quantum computational science: a perspective from block-encodings and polynomial transformations.</span>
+          <span class="pub-venue">APL Computational Physics <b>2</b>, 010901 (2026).</span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong>, Y. Liu, and F. Mueller.</span>
+          <span class="pub-title">HyPulse: a pulse synthesis framework for hybrid qubit–oscillator gates on trapped-ion platforms.</span>
+          <span class="pub-venue">IEEE International Conference on Quantum Computing and Engineering (QCE), 2026.</span>
           <span class="pub-links">
-            <a href="#">arXiv</a>
-            <a href="#">DOI</a>
-            <a href="#">PDF</a>
+            <a href="https://arxiv.org/abs/2604.26804">arXiv</a>
           </span>
+        </li>
+        <li>
+          <span class="pub-authors">E. Karooby, <strong>M. Hakimi Heris</strong>, Q. Gu, and D. Farfurnik.</span>
+          <span class="pub-title">Inverse design of non-periodic circular cavities for efficient spin–photon interfacing by genetic algorithm.</span>
+          <span class="pub-venue">SPIE Optical Modeling and Performance Predictions XV <b>13594</b>, 116–119 (2025).</span>
+        </li>
+        <li>
+          <span class="pub-authors">A. Das, N. K. Vij, <strong>M. Hakimi Heris</strong>, and D. Farfurnik.</span>
+          <span class="pub-title">Optimization of circular gratings via guided-mode-expansion-method-based inverse design.</span>
+          <span class="pub-venue">SPIE Photonics for Quantum <b>13563</b>, 65–71 (2025).</span>
+        </li>
+        <li>
+          <span class="pub-authors">E. Karooby, H. Sahbafar, <strong>M. Hakimi Heris</strong>, A. Hadi, and V. Eskandari.</span>
+          <span class="pub-title">Identification of low concentrations of flucytosine drug using a SERS-active filter paper substrate.</span>
+          <span class="pub-venue">Plasmonics <b>19</b>(2), 855–863 (2024).</span>
+        </li>
+        <li>
+          <span class="pub-authors">V. Eskandari, H. Sahbafar, E. Karooby, <strong>M. Hakimi Heris</strong>, S. Mehmandoust, D. Razmjoue, and A. Hadi.</span>
+          <span class="pub-title">SERS filter paper substrates decorated with silver nanoparticles for the detection of molecular vibrations of acyclovir drug.</span>
+          <span class="pub-venue">Spectrochimica Acta Part A <b>298</b>, 122762 (2023).</span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong> and R. Faez.</span>
+          <span class="pub-title">Investigation of the possibility of using single-electron transistors in digital-to-time converters.</span>
+          <span class="pub-venue">IEEE Global Congress on Electrical Engineering (GC-ElecEng), 150–153 (2021).</span>
         </li>
       </ul>
 
       <h3>Under Review and Preprints</h3>
       <ul class="pub-list">
         <li>
-          <span class="pub-authors"><strong>M. Hakimi Heris</strong><sup><a href="#equal-contrib">*</a></sup>, C. Coauthor<sup><a href="#equal-contrib">*</a></sup>, and D. Coauthor.</span>
-          <span class="pub-title">Title of the preprint goes here.</span>
-          <span class="pub-venue">Under review, 2026. arXiv:0000.00000.</span>
+          <span class="pub-authors">C. Chu, <strong>M. Hakimi Heris</strong>, H. Zhou, and Y. Liu.</span>
+          <span class="pub-title">FACT: a fidelity-aware compiler for trapped-ion quantum computers.</span>
+          <span class="pub-venue">Under review, IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2027.</span>
+        </li>
+        <li>
+          <span class="pub-authors">R. Patel, <strong>M. Hakimi Heris</strong>, Y. Liu, and F. Mueller.</span>
+          <span class="pub-title">Synthesizing compound pulse gadgets for Hamiltonian simulation on trapped-ion platforms.</span>
+          <span class="pub-venue">Preprint, 2026. arXiv:2607.00826.</span>
           <span class="pub-links">
-            <a href="#">arXiv</a>
-            <a href="#">PDF</a>
+            <a href="https://arxiv.org/abs/2607.00826">arXiv</a>
+          </span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong>.</span>
+          <span class="pub-title">Graph state generation based on quantum photonic devices, enabling measurement-based quantum computing.</span>
+          <span class="pub-venue">Preprint, 2026. arXiv:2607.16667.</span>
+          <span class="pub-links">
+            <a href="https://arxiv.org/abs/2607.16667">arXiv</a>
           </span>
         </li>
       </ul>
@@ -513,8 +554,23 @@
       <h3>In Preparation</h3>
       <ul class="pub-list">
         <li>
-          <span class="pub-authors"><strong>M. Hakimi Heris</strong> and E. Coauthor.</span>
-          <span class="pub-title">Working title of the manuscript in preparation.</span>
+          <span class="pub-authors">E. Karooby<sup><a href="#equal-contrib">*</a></sup>, <strong>M. Hakimi Heris</strong><sup><a href="#equal-contrib">*</a></sup>, Y. Liu, and Q. Gu.</span>
+          <span class="pub-title">Universal function approximation using quantum signal processing on a photonic integrated platform.</span>
+          <span class="pub-venue">In preparation, 2026.</span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong> and Y. Liu.</span>
+          <span class="pub-title">Robustness-aware quantum signal processing: error cancellation, optimization, and learned angle synthesis.</span>
+          <span class="pub-venue">In preparation, 2026.</span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong>, Y. Liu, and F. Mueller.</span>
+          <span class="pub-title">A native trapped-ion hybrid qudit–oscillator instruction set.</span>
+          <span class="pub-venue">In preparation, 2026.</span>
+        </li>
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong>, Y. Liu, and F. Mueller.</span>
+          <span class="pub-title">Learned pulse synthesis for hybrid CV–DV gates on trapped-ion hardware.</span>
           <span class="pub-venue">In preparation, 2026.</span>
         </li>
       </ul>
@@ -525,7 +581,17 @@
     <section id="teaching" aria-labelledby="teaching-heading">
       <h2 id="teaching-heading">Teaching &amp; Mentoring</h2>
 
-      <p>Placeholder — teaching assistantships, guest lectures, mentored students, and outreach go here.</p>
+      <h3>Teaching</h3>
+      <p><strong>Preparing the Professoriate Fellow</strong>, NC State University (2026–2027). A year-long teaching apprenticeship: co-teaching a course with a faculty mentor, developing a teaching portfolio and philosophy statement, and completing pedagogy coursework.</p>
+      <p><strong>Teaching Assistant</strong>, Signals, Circuits, and Systems Laboratory, NC State University.</p>
+      <p><strong>Teaching Assistant</strong>, Microfabrication and Electrical Circuits Laboratories, Montana State University (2022–2023).</p>
+
+      <h3>Mentoring</h3>
+      <p>I supervise undergraduate and graduate researchers on projects at the intersection of machine learning and quantum control:</p>
+      <ul>
+        <li><strong>Samuel Firmansyah</strong> (Spring 2026) — AI-based robust quantum signal processing, on learned robust angle synthesis.</li>
+        <li><strong>Nidhi Grover</strong> (Spring 2026) — AI-based pulse synthesis for hybrid CV–DV gates on trapped-ion hardware.</li>
+      </ul>
     </section>
 
     <section id="cv" aria-labelledby="cv-heading">
