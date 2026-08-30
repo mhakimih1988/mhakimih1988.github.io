@@ -159,6 +159,54 @@
 
     figure.fig-slot figcaption { margin: 0; }
 
+    /* ---------- Publications ---------- */
+
+    .pub-list {
+      list-style: none;
+      margin: 0 0 8px;
+      padding: 0;
+    }
+
+    .pub-list > li {
+      margin: 0 0 22px;
+      padding-left: 16px;
+      border-left: 2px solid var(--rule);
+    }
+
+    .pub-title { font-weight: 600; }
+
+    .pub-venue { color: var(--muted); }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 7px;
+    }
+
+    .pub-links a {
+      display: inline-block;
+      padding: 1px 9px;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      font-size: 13px;
+      line-height: 1.55;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .pub-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #fdf3f3;
+    }
+
+    .pub-note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
     /* ---------- Footer ---------- */
 
     .site-footer {
@@ -241,6 +289,44 @@
 
     <section id="publications">
       <h2>Publications</h2>
+
+      <h3>Peer-Reviewed</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong>, A. Coauthor, and B. Coauthor.</span>
+          <span class="pub-title">Title of the published paper goes here.</span>
+          <span class="pub-venue">Journal Name <b>00</b>, 000000 (2026).</span>
+          <span class="pub-links">
+            <a href="#">arXiv</a>
+            <a href="#">DOI</a>
+            <a href="#">PDF</a>
+          </span>
+        </li>
+      </ul>
+
+      <h3>Under Review and Preprints</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong><sup>*</sup>, C. Coauthor<sup>*</sup>, and D. Coauthor.</span>
+          <span class="pub-title">Title of the preprint goes here.</span>
+          <span class="pub-venue">Under review, 2026. arXiv:0000.00000.</span>
+          <span class="pub-links">
+            <a href="#">arXiv</a>
+            <a href="#">PDF</a>
+          </span>
+        </li>
+      </ul>
+
+      <h3>In Preparation</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-authors"><strong>M. Hakimi Heris</strong> and E. Coauthor.</span>
+          <span class="pub-title">Working title of the manuscript in preparation.</span>
+          <span class="pub-venue">In preparation, 2026.</span>
+        </li>
+      </ul>
+
+      <p class="pub-note"><sup>*</sup> These authors contributed equally.</p>
     </section>
 
     <section id="teaching">
