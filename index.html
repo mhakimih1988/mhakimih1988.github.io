@@ -159,6 +159,56 @@
 
     figure.fig-slot figcaption { margin: 0; }
 
+    /* ---------- News ---------- */
+
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-list li {
+      display: flex;
+      gap: 18px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .news-list li:last-child { border-bottom: 0; }
+
+    .news-list time {
+      flex: 0 0 100px;
+      color: var(--muted);
+      font-size: 15px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .btn {
+      display: inline-block;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover { background: var(--accent-dark); color: #ffffff; }
+
+    .btn-sm {
+      padding: 4px 12px;
+      font-size: 15px;
+    }
+
+    .cv-meta {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
     /* ---------- Publications ---------- */
 
     .pub-list {
@@ -240,9 +290,9 @@
         <p class="role">Ph.D. Candidate, Electrical and Computer Engineering — expected May 2027</p>
         <p class="affil">North Carolina State University</p>
         <ul class="profile-links">
+          <li><a class="btn btn-sm" href="cv.pdf">CV (PDF)</a></li>
           <li><a href="mailto:mhakimi@ncsu.edu">Email</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="#cv">CV</a></li>
         </ul>
       </div>
     </div>
@@ -257,6 +307,14 @@
 
     <section id="news">
       <h2>News</h2>
+
+      <ul class="news-list">
+        <li><time datetime="2026-08">Aug 2026</time><span>Placeholder — recent talk, award, or paper acceptance.</span></li>
+        <li><time datetime="2026-05">May 2026</time><span>Placeholder — preprint posted to arXiv.</span></li>
+        <li><time datetime="2026-03">Mar 2026</time><span>Placeholder — conference presentation (APS March Meeting, IEEE QCE, …).</span></li>
+        <li><time datetime="2025-11">Nov 2025</time><span>Placeholder — collaboration, internship, or visit.</span></li>
+        <li><time datetime="2025-08">Aug 2025</time><span>Placeholder — journal publication or milestone.</span></li>
+      </ul>
     </section>
 
     <section id="research">
@@ -331,10 +389,15 @@
 
     <section id="teaching">
       <h2>Teaching &amp; Mentoring</h2>
+
+      <p>Placeholder — teaching assistantships, guest lectures, mentored students, and outreach go here.</p>
     </section>
 
     <section id="cv">
       <h2>CV</h2>
+
+      <p><a class="btn" href="cv.pdf">Download CV (PDF)</a></p>
+      <p class="cv-meta">Last updated August 2026.</p>
     </section>
 
     <section id="contact">
