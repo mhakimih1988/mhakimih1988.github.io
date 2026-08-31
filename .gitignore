@@ -23,3 +23,6 @@ yarn-error.log*
 *.log
 *.out
 *.synctex.gz
+
+# CV source (ship only cv.pdf)
+*.tex
