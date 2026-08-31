@@ -71,6 +71,8 @@
       --bg: #ffffff;
       --bg-soft: #f7f7f5;
       --measure: 800px;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --accent-soft: #f0c9c9;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -215,6 +217,75 @@
     }
 
     figure.fig-slot figcaption { margin: 0; }
+
+    /* ---------- Projects ---------- */
+
+    .proj-list, .talk-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .proj-list > li {
+      margin: 0 0 26px;
+      padding-left: 16px;
+      border-left: 2px solid var(--rule);
+    }
+
+    .proj-list h3 { margin: 0 0 4px; }
+
+    .proj-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .tag, .status, .kind {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      padding: 1px 8px;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .status {
+      border-style: dashed;
+    }
+
+    /* ---------- Talks ---------- */
+
+    .talk-list > li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .talk-list > li:last-child { border-bottom: 0; }
+
+    .talk-title {
+      margin: 0 0 4px;
+      font-weight: 600;
+    }
+
+    .talk-meta {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .kind { border-color: var(--accent-soft); color: var(--accent); }
+
+    .lede { color: var(--text); }
+
+    .thread-refs {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .mono { font-family: var(--mono); font-size: 0.94em; }
 
     /* ---------- News ---------- */
 
@@ -407,7 +478,10 @@
       <li><a href="#news">News</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#talks">Talks</a></li>
       <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
       <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -576,22 +650,99 @@
 
       <p class="pub-note" id="equal-contrib"><sup>*</sup> These authors contributed equally.</p>
     </section>
+
+    <section id="software" aria-labelledby="software-heading">
+      <h2 id="software-heading">Software and Projects</h2>
+
+      <ul class="proj-list">
+        <li>
+          <h3>HyPulse</h3>
+          <p>GRAPE-based pulse synthesis for hybrid CV–DV qubit–oscillator gates on trapped ions, including single-step Toffoli synthesis from native interactions. Built in Python with JAX for differentiable optimization.</p>
+          <p class="proj-meta"><span class="tag">Python</span> <span class="tag">JAX</span> <span class="tag">QuTiP</span> <span class="status">Code release planned</span></p>
+        </li>
+        <li>
+          <h3>HybridLane qudit–oscillator extension</h3>
+          <p>An extension of HybridLane, itself a PennyLane extension, adding native qudit–oscillator circuits so hybrid CV–DV programs can be expressed and simulated in a standard framework.</p>
+          <p class="proj-meta"><span class="tag">Python</span> <span class="tag">PennyLane</span> <span class="status">Code release planned</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="talks" aria-labelledby="talks-heading">
+      <h2 id="talks-heading">Talks and Posters</h2>
+
+      <ul class="talk-list">
+        <li>
+          <p class="talk-title">Experimental realization of quantum signal processing on a photonic integrated circuit</p>
+          <p class="talk-meta"><span class="kind">Poster</span> · IEEE Photonics Conference · <span class="mono">Nov 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">HyPulse: a pulse synthesis framework for hybrid qubit–oscillator gates on trapped-ion platforms</p>
+          <p class="talk-meta"><span class="kind">Contributed talk</span> · IEEE Quantum Computing and Engineering (QCE), Toronto · <span class="mono">Sep 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">Toward compact multiqubit gates on trapped ions: a hardware-aware pulse synthesis</p>
+          <p class="talk-meta"><span class="kind">Poster</span> · NSF Workshop on Signal and Information Processing in the Quantum Era (SIPQ), IEEE Quantum Week/QCE, Toronto · <span class="mono">Sep 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">Toward compact multiqubit gates on trapped ions: a hardware-aware pulse synthesis</p>
+          <p class="talk-meta"><span class="kind">Contributed talk</span> · QCCC-26, Fifth International Workshop on Quantum Classical Cooperative Computing, co-located with ISCA · <span class="mono">Jun 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">Synthesizing compound pulse gadgets for Hamiltonian simulation on trapped-ion platforms</p>
+          <p class="talk-meta"><span class="kind">Contributed talk</span> · QCCC-26, Fifth International Workshop on Quantum Classical Cooperative Computing, co-located with ISCA · <span class="mono">Jun 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">Simulations of nonadiabatic vibronic dynamics on hybrid qudit–qumode trapped-ion devices</p>
+          <p class="talk-meta"><span class="kind">Poster</span> · RQS Institute Workshop, University of Maryland · <span class="mono">Jun 2026</span></p>
+        </li>
+        <li>
+          <p class="talk-title">MEMS devices for in-situ straining of 2D materials</p>
+          <p class="talk-meta">MonArk NSF Quantum Foundry site visit, Bozeman, MT · <span class="mono">2024</span></p>
+        </li>
+        <li>
+          <p class="talk-title">MEMS cantilevers for dynamic strain studies of 2D materials</p>
+          <p class="talk-meta">Optical Science &amp; Engineering Conference (OpTeC), Bozeman, MT · <span class="mono">2023</span></p>
+        </li>
+      </ul>
+    </section>
     <section id="teaching" aria-labelledby="teaching-heading">
       <h2 id="teaching-heading">Teaching &amp; Mentoring</h2>
 
       <h3>Teaching</h3>
-      <p><strong>Preparing the Professoriate Fellow</strong>, NC State University (2026–2027). A year-long teaching apprenticeship: co-teaching a course with a faculty mentor, developing a teaching portfolio and philosophy statement, and completing pedagogy coursework.</p>
-      <p><strong>Teaching Assistant</strong>, Signals, Circuits, and Systems Laboratory, NC State University.</p>
-      <p><strong>Teaching Assistant</strong>, Microfabrication and Electrical Circuits Laboratories, Montana State University (2022–2023).</p>
+      <p><strong>Preparing the Professoriate Fellow</strong>, NC State University, 2026–2027. Faculty mentor Dr. Jennifer Marley (ECE). A year-long teaching apprenticeship co-teaching ECE 211, Electric Circuits, the required sophomore circuits course for EE, CPE, and BME majors, alongside a teaching portfolio, a philosophy statement, and pedagogy coursework.</p>
+      <p><strong>Teaching Assistant, circuits and systems laboratories</strong>, 2022–2025. Signals, Circuits, and Systems Laboratory at NC State, about 25 students per section, and the Electrical Circuits Laboratory at Montana State, about 20 students per section. I taught students to build and characterize RLC and power circuits, take bench measurements, and analyze the results, with weight on clear technical reporting.</p>
+      <p><strong>Teaching Assistant, Microfabrication Laboratory</strong>, Montana State University, 2022–2023, about 20 students per section. I prepared wafers, tooling, and process recipes before each session, then took students through a full multi-layer transistor fabrication flow in a cleanroom: oxidation, photolithography, deposition, and wet and dry etching.</p>
+
+      <h3>Courses prepared to teach</h3>
+      <p><strong>Core undergraduate.</strong> Circuits, signals and systems, electronics, semiconductor devices, microfabrication and nanofabrication laboratory.</p>
+      <p><strong>Graduate and elective.</strong> Quantum computing architectures, quantum control and pulse-level programming, quantum algorithms and QSP/QSVT, photonic and quantum devices.</p>
 
       <h3>Mentoring</h3>
       <p>I supervise undergraduate researchers on projects at the intersection of machine learning and quantum control:</p>
       <ul>
-        <li><strong>Samuel Firmansyah</strong>, undergraduate in Computer Science (Spring 2026) — AI-based robust quantum signal processing, on learned robust angle synthesis.</li>
-        <li><strong>Nidhi Grover</strong>, undergraduate in Computer Science (Spring 2026) — AI-based pulse synthesis for hybrid CV–DV gates on trapped-ion hardware.</li>
+        <li><strong>Samuel Firmansyah</strong>, undergraduate in Computer Science, Spring 2026. AI-based robust quantum signal processing, on learned robust angle synthesis.</li>
+        <li><strong>Nidhi Grover</strong>, undergraduate in Computer Science, Spring 2026. AI-based pulse synthesis for hybrid CV–DV gates on trapped-ion hardware.</li>
       </ul>
     </section>
 
+    <section id="service" aria-labelledby="service-heading">
+      <h2 id="service-heading">Service</h2>
+
+      <h3>Peer review</h3>
+      <p>Sub-reviewer on program-committee and editorial assignments for Prof. Yuan Liu and Prof. Frank Mueller, five manuscripts across 2025 and 2026:</p>
+      <ul>
+        <li><span class="mono">IEEE Journal of Selected Topics in Signal Processing</span>, special issue on quantum technologies, one manuscript, 2026.</li>
+        <li><span class="mono">IEEE Quantum Computing and Engineering (QCE)</span>, two manuscripts in the Quantum Applications and Quantum Machine Learning tracks, 2026.</li>
+        <li><span class="mono">Software Frameworks and Workload Management on Quantum and HPC Ecosystems (SFWM) at SC</span>, two manuscripts, 2025 and 2026.</li>
+      </ul>
+
+      <h3>Memberships</h3>
+      <p>Student Member, IEEE, 2026–present. Member, IEEE Photonics Society, 2026–present.</p>
+
+      <h3>Outreach</h3>
+      <p>K–12 outreach volunteer at Montana State University, 2023–2024. I ran hands-on demonstrations for visiting school groups at MSU's annual campus science outreach day: simple photonics experiments, plus a cleanroom station where students tried on fabrication garments and saw how devices are made.</p>
+    </section>
     <section id="cv" aria-labelledby="cv-heading">
       <h2 id="cv-heading">CV</h2>
 
