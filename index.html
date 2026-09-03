@@ -144,9 +144,12 @@
       height: 100vh;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.055;
       color: var(--accent);
     }
+
+    /* Structures stay faint. The photon is held separately so it can sit
+       above them without lifting the whole layer. */
+    .bd-pic, .bd-atoms, .bd-ions { opacity: 0.055; }
 
     .backdrop line, .backdrop path {
       fill: none;
@@ -160,8 +163,30 @@
 
     .backdrop rect { fill: currentColor; stroke: none; }
 
+    /* One photon, one waveguide, one slow pass. No glow, no trail. */
+    .bd-photon { opacity: 0.42; }
+
+    .bd-photon circle {
+      fill: currentColor;
+      stroke: none;
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .bd-photon circle { animation: photon-pass 22s linear infinite; }
+    }
+
+    @keyframes photon-pass {
+      0%   { transform: translateX(0);     opacity: 0; }
+      3%   { opacity: 1; }
+      57%  { opacity: 1; }
+      62%  { transform: translateX(630px); opacity: 0; }
+      100% { transform: translateX(630px); opacity: 0; }
+    }
+
     @media (prefers-color-scheme: dark) {
-      .backdrop { opacity: 0.075; }
+      .bd-pic, .bd-atoms, .bd-ions { opacity: 0.075; }
+      .bd-photon { opacity: 0.55; }
     }
 
     .wrap {
@@ -744,6 +769,9 @@
       <circle cx="1360" cy="820" r="11"></circle>
       <line x1="180" y1="762" x2="1420" y2="762" class="bd-rail"></line>
       <line x1="180" y1="878" x2="1420" y2="878" class="bd-rail"></line>
+    </g>
+    <g class="bd-photon">
+      <circle cx="70" cy="120" r="4.5"></circle>
     </g>
   </svg>
 
