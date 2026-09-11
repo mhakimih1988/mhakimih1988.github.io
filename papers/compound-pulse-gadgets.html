@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthesizing Compound Pulse Gadgets for Hamiltonian Simulation on Trapped-Ion Platforms</title>
+  <meta name="description" content="Compiling QSVT Hamiltonian simulation of H₂ on three trapped ions directly into GRAPE-synthesized compound pulse gadgets to shorten the pulse schedule.">
+  <link rel="canonical" href="https://mhakimih1988.github.io/papers/compound-pulse-gadgets.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- No citation_* tags here: arXiv:2607.00826 is the canonical record and already
+       feeds Google Scholar. Tagging this page would invite a duplicate entry. -->
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Synthesizing Compound Pulse Gadgets for Hamiltonian Simulation on Trapped-Ion Platforms">
+  <meta property="og:description" content="Compiling QSVT Hamiltonian simulation of H₂ on three trapped ions directly into GRAPE-synthesized compound pulse gadgets to shorten the pulse schedule.">
+  <meta property="og:url" content="https://mhakimih1988.github.io/papers/compound-pulse-gadgets.html">
+  <meta property="og:image" content="https://mhakimih1988.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg: #fcfcfd; --text: #14171f; --muted: #545c6e; --rule: #e0e3ec;
+      --accent: #4338ca; --accent-dim: #efeefb;
+      --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, "Times New Roman", serif;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0d1017; --text: #dde1ea; --muted: #99a2b4; --rule: #242b3a;
+              --accent: #a5b4fc; --accent-dim: #1a2036; }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background-color: var(--bg); color: var(--text);
+           font-family: var(--serif); font-size: 18px; line-height: 1.65; }
+    a { color: var(--accent); text-underline-offset: 2px; }
+    .wrap { max-width: 72ch; margin: 0 auto; padding: 44px 24px 60px; }
+    .back { font-family: var(--mono); font-size: 12.5px; color: var(--muted); text-decoration: none; }
+    .back:hover { color: var(--accent); }
+    .kicker { margin: 34px 0 10px; font-family: var(--mono); font-size: 12.5px;
+              letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin: 0 0 16px; font-size: 30px; line-height: 1.25; font-weight: 600; }
+    .authors { margin: 0 0 6px; }
+    .venue { margin: 0 0 22px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 34px; }
+    .links a { display: inline-block; padding: 5px 14px; border: 1px solid var(--rule); border-radius: 3px;
+               font-family: var(--mono); font-size: 13px; color: var(--accent); text-decoration: none; }
+    .links a:hover { border-color: var(--accent); background-color: var(--accent-dim); }
+    h2 { margin: 0 0 12px; font-family: var(--mono); font-size: 12.5px; font-weight: 600;
+         letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); }
+    .abstract { padding-top: 26px; border-top: 1px solid var(--rule); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule);
+             font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="../">← Mas Hakimi Heris</a>
+
+    <p class="kicker">Preprint</p>
+    <h1>Synthesizing Compound Pulse Gadgets for Hamiltonian Simulation on Trapped-Ion Platforms</h1>
+    <p class="authors">Ria Patel, <strong>Masoud Hakimi Heris</strong>, Yuan Liu, and Frank Mueller</p>
+    <p class="venue">arXiv:2607.00826 · Presented at <a href="https://qcccadmin.github.io/qccc/">QCCC-26, Fifth International Workshop on Quantum Classical Cooperative Computing</a>, co-located with ISCA · June 2026</p>
+
+    <p class="links">
+      <a href="https://arxiv.org/abs/2607.00826">arXiv</a>
+      <a href="https://arxiv.org/pdf/2607.00826">PDF</a>
+      <a href="https://qcccadmin.github.io/qccc/files/qccc26_files/QCCC-26_paper_2.pdf">QCCC-26 copy</a>
+    </p>
+
+    <section class="abstract" aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Standard gate-level transpilation introduces significant physical noise and overhead for high-precision quantum algorithms, such as the Quantum Singular Value Transformation (QSVT), on near-term trapped-ion hardware. Current compilers treat quantum operations as discrete units, forcing the physical control layer to execute highly fragmented laser pulses. To address this hardware-software disconnect, this work introduces a holistic pulse synthesis strategy that bypasses discrete gate-stitching to compile algorithms directly into continuous compound pulse gadgets. As a proof-of-concept, we target Hamiltonian simulation of the H<sub>2</sub> molecule, block-encoding the problem into a QSVT circuit to approximate the time-evolution operator U = e<sup>−iHt</sup> across 3 computational ions (2 system, 1 ancilla). We utilize the Gradient Ascent Pulse Engineering (GRAPE) algorithm to generate these compound gadgets and evaluate our methodology using noisy Lindblad master equation simulations. Preliminary observations indicate that the proposed strategy achieves significant temporal compression, reducing the total pulse schedule duration compared to standard compilers. Furthermore, synthesizing operations holistically eliminates the control-layer latency associated with discrete pulse lookup overhead. By streamlining the physical control schedule, this methodology offers a promising pathway to execute operations faster, highlighting the potential for compound gadgets to increase the computational depth achievable within fundamental T<sub>2</sub> decoherence limits.</p>
+    </section>
+
+    <footer>© 2026 Mas Hakimi Heris · NC State University</footer>
+  </main>
+</body>
+</html>
